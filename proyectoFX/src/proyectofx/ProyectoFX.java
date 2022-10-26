@@ -32,6 +32,8 @@ public class ProyectoFX extends Application {
     @Override
     public void start(Stage primaryStage) {
         
+        System.out.println("metodo start ");
+        
         Button btn1 = new Button("boton 1");
         Button btn2 = new Button("boton 2");
         Button btn3 = new Button("boton 3");
@@ -68,12 +70,16 @@ public class ProyectoFX extends Application {
         
        
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 600, 400);
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    @Override
+    public void stop(){
+        System.out.println("metodo stop");
+    } 
 
     /**
      * @param args the command line arguments
