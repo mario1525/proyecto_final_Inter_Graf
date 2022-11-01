@@ -1,5 +1,6 @@
 package aplication_1fx;
 
+import java.awt.Image;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,56 +16,56 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import static javax.swing.text.StyleConstants.Background;
 
 public class Aplication_1FX extends Application {
 
-    public Aplication_1FX() {
-    }
-
-    public void init(Stage primaryStage) {
-
-    }
-
     @Override
     public void start(Stage primaryStage) {
-
-        //root Node 
+        //root Node
         BorderPane root = new BorderPane();
 
-        //text NOde 
-        Text txtNode = new Text("selection");
-        txtNode.setFont(Font.font("Comic sans MS", 18));
-        txtNode.setFill(Color.BLUE);
+        //llamado de el background 
+        //Text Node
+        Text txtNode = new Text("Selection");
+        txtNode.setFont(Font.font("Comic Sans Ms", 30));
+        txtNode.setFill(Color.CYAN);
 
+        //listView for Alumnos
         VBox vbox1 = new VBox(10);
 
-        Text txtAlumno = new Text("Estudiantes");
-        txtAlumno.setFont(Font.font("Comic sans MS", 18));
-        txtAlumno.setFill(Color.GREEN);
+        Text txtAlumno = new Text("estudiantes");
+        txtAlumno.setFont(Font.font("Comic sans Ms", 18));
+        txtAlumno.setFill(Color.CHARTREUSE);
 
-        ListView<String> ListAlumno = new ListView<String>();
+        ListView<String> listAlumnos = new ListView<String>();
         ObservableList<String> alumnos = FXCollections.observableArrayList(
-                "mario",
-                "madhe",
-                "roberth",
-                "alex",
-                "sebastian",
-                "orlay",
-                "heider");
-        ListAlumno.setItems(alumnos);
-        ListAlumno.setMaxHeight(250);
+                "Mario",
+                "Valentina",
+                "Madheleyn",
+                "Orlay",
+                "Alexander",
+                "Heider",
+                "Sebastian");
+        listAlumnos.setItems(alumnos);
+        listAlumnos.setMaxHeight(250);
 
-        vbox1.getChildren().addAll(txtAlumno, ListAlumno);
+        vbox1.getChildren().addAll(txtAlumno, listAlumnos);
         vbox1.setAlignment(Pos.CENTER);
-        vbox1.setPadding(Insets.EMPTY);
+        vbox1.setPadding(new Insets(10));
 
+        //ListView for selection Mode
         VBox vbox2 = new VBox(10);
+
         Text txtMode = new Text("Selection Mode");
         txtMode.setFont(Font.font("Comic Sans MS", 18));
         txtMode.setFill(Color.GOLD);
@@ -74,7 +75,8 @@ public class Aplication_1FX extends Application {
 
         ObservableList<String> mode = FXCollections.observableArrayList(
                 "Single",
-                "Mulriple");
+                "Multiple"
+        );
         listMode.setItems(mode);
         listMode.setMaxHeight(250);
 
@@ -87,12 +89,20 @@ public class Aplication_1FX extends Application {
             @Override
             public void changed(ObservableValue<? extends String> ov, String t, String t1) {
                 if (t1.equals("Single")) {
-                    ListAlumno.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+                    listAlumnos.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
                 } else {
-                    ListAlumno.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+                    listAlumnos.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
                 }
             }
         });
+        
+        //terminar estas lineas 
+        
+        //imgbackground
+        BackgroundImage bckimg = new 
+        //imagen de fondo 
+        Image img1 = new Image("images.jpeg");
+       
 
         //Button and Action
         Button btnShow = new Button("Show");
@@ -110,19 +120,19 @@ public class Aplication_1FX extends Application {
                     txtNode.setText("Select a ListView Selection Mode");
                 } else {
                     //Check if isMode ListView has a selected Item
-                    if (ListAlumno.getSelectionModel().isEmpty()) {
+                    if (listAlumnos.getSelectionModel().isEmpty()) {
                         txtNode.setText("Select an Alumno");
                     } else {
                         //If ListView for Alumnos is in Single selection mode...
                         if (listMode.getSelectionModel().getSelectedItem().equals("Single")) {
 
-                            txtNode.setText((ListAlumno.getSelectionModel().getSelectedIndex())
+                            txtNode.setText((listAlumnos.getSelectionModel().getSelectedIndex())
                                     + "-"
-                                    + ListAlumno.getSelectionModel().getSelectedItem() + "");
+                                    + listAlumnos.getSelectionModel().getSelectedItem() + "");
                             //If ListView for Alumnos is in Multiple selection mode...
                         } else {
                             String txtSelect = "";
-                            ObservableList<String> select = ListAlumno.getSelectionModel().getSelectedItems();
+                            ObservableList<String> select = listAlumnos.getSelectionModel().getSelectedItems();
                             for (Object o : select) {
                                 txtSelect = txtSelect + alumnos.indexOf(0) + "-" + o + " ";
 
@@ -130,25 +140,32 @@ public class Aplication_1FX extends Application {
                             txtNode.setText(txtSelect);
                         }
                     }
-                    ListAlumno.getSelectionModel().clearSelection();
+                    listAlumnos.getSelectionModel().clearSelection();
                 }
             }
-
         });
 
-        Scene scene = new Scene(root, 600, 350);
+        root.setRight(btnShow);
+        root.setCenter(vbox1);
+        root.setLeft(vbox2);
+        root.setBottom(txtNode);
+        root.setPrefSize(600,350);
+        
+        
 
-        primaryStage.setTitle("lista de alumnos!");
+        Scene scene = new Scene(root, 600, 350);
+        primaryStage.setTitle("javafx8-listview");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    public void stop(Stage primaryStage) {
 
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void setPrefSize(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
