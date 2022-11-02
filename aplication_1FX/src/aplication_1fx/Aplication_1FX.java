@@ -1,6 +1,5 @@
 package aplication_1fx;
 
-import java.awt.Image;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,11 +20,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import static javax.swing.text.StyleConstants.Background;
+
 
 public class Aplication_1FX extends Application {
 
@@ -33,6 +28,7 @@ public class Aplication_1FX extends Application {
     public void start(Stage primaryStage) {
         //root Node
         BorderPane root = new BorderPane();
+        //final ImageView ImageView = new ImageView();
 
         //llamado de el background 
         //Text Node
@@ -95,14 +91,6 @@ public class Aplication_1FX extends Application {
                 }
             }
         });
-        
-        //terminar estas lineas 
-        
-        //imgbackground
-        BackgroundImage bckimg = new 
-        //imagen de fondo 
-        Image img1 = new Image("images.jpeg");
-       
 
         //Button and Action
         Button btnShow = new Button("Show");
@@ -144,13 +132,20 @@ public class Aplication_1FX extends Application {
                 }
             }
         });
+        
+         //imagen
+        //esta linea carga la imagen en el proyecto 
+        //Image img = new Image("/images.jpeg"); 
+        
+       //ImageView.setImage(img);
+       
+        
 
         root.setRight(btnShow);
         root.setCenter(vbox1);
         root.setLeft(vbox2);
-        root.setBottom(txtNode);
-        root.setPrefSize(600,350);
-        
+        root.setBottom(txtNode);        
+       
         
 
         Scene scene = new Scene(root, 600, 350);
