@@ -14,6 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -27,10 +30,9 @@ public class Aplication_1FX extends Application {
     @Override
     public void start(Stage primaryStage) {
         //root Node
-        BorderPane root = new BorderPane();
-        //final ImageView ImageView = new ImageView();
+        BorderPane root = new BorderPane();        
 
-        //llamado de el background 
+        
         //Text Node
         Text txtNode = new Text("Selection");
         txtNode.setFont(Font.font("Comic Sans Ms", 30));
@@ -135,9 +137,8 @@ public class Aplication_1FX extends Application {
         
          //imagen
         //esta linea carga la imagen en el proyecto 
-        //Image img = new Image("/images.jpeg"); 
-        
-       //ImageView.setImage(img);
+        Image img = new Image("C:\\Users\\ANA ROSA\\Desktop\\proyecto_final_Inter_Graf\\aplication_1FX\\src\\aplication_1fx\\images.jpeg");      
+      
        
         
 
