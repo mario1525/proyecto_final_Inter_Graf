@@ -137,7 +137,7 @@ public class Aplication_1FX extends Application {
         
          //imagen
         //esta linea carga la imagen en el proyecto 
-        Image img = new Image("C:\\Users\\ANA ROSA\\Desktop\\proyecto_final_Inter_Graf\\aplication_1FX\\src\\aplication_1fx\\images.jpeg");      
+        //Image img = new Image("C:\\Users\\ANA ROSA\\Desktop\\proyecto_final_Inter_Graf\\aplication_1FX\\src\\aplication_1fx\\images.jpeg");
       
        
         
@@ -160,8 +160,6 @@ public class Aplication_1FX extends Application {
         launch(args);
     }
 
-    private void setPrefSize(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 }
