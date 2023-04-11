@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aplication_1FX/aplication_1FX.iml" filepath="$PROJECT_DIR$/aplication_1FX/aplication_1FX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ciclo_vida_FX/ciclo_vida_FX.iml" filepath="$PROJECT_DIR$/ciclo_vida_FX/ciclo_vida_FX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estructuraJava/estructuraJava.iml" filepath="$PROJECT_DIR$/estructuraJava/estructuraJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listaView/listaView.iml" filepath="$PROJECT_DIR$/listaView/listaView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyecto2_FX/proyecto2_FX.iml" filepath="$PROJECT_DIR$/proyecto2_FX/proyecto2_FX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyectoFX/proyectoFX.iml" filepath="$PROJECT_DIR$/proyectoFX/proyectoFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/proyecto_final_Inter_Graf.iml" filepath="$PROJECT_DIR$/.idea/proyecto_final_Inter_Graf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyecto_login/proyecto_login.iml" filepath="$PROJECT_DIR$/proyecto_login/proyecto_login.iml" />
+    </modules>
+  </component>
+</project>

@@ -15,10 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Unireformada
- */
+
 public class ProyectoFX extends Application {
 
     public ProyectoFX() {
@@ -34,11 +31,11 @@ public class ProyectoFX extends Application {
         
         System.out.println("metodo start ");
         
-        Button btn1 = new Button("boton 1");
-        Button btn2 = new Button("boton 2");
-        Button btn3 = new Button("boton 3");
-        Button btn4 = new Button("boton 4");
-        Button btn5 = new Button("boton 5");
+        Button btn1 = new Button("azul");
+        Button btn2 = new Button("rojo");
+        Button btn3 = new Button("verde");
+        Button btn4 = new Button("amarillo");
+        Button btn5 = new Button("morado");
         
        
         
@@ -48,24 +45,60 @@ public class ProyectoFX extends Application {
         btn1.setMaxWidth(Double.MAX_VALUE);
         btn1.setMaxHeight(Double.MAX_VALUE);
         BorderPane.setMargin(btn1, new Insets(5,5,5,5));
+        btn1.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón 1 clickeado");
+                // codigo para ejecutar
+            }
+        });
+
         
         root.setTop(btn2);
         btn2.setMaxWidth(Double.MAX_VALUE);
         btn2.setMaxHeight(Double.MAX_VALUE);
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón 2 clickeado");
+                // codigo para ejecutar
+            }
+        });
         
         root.setBottom(btn3);
         btn3.setMaxWidth(Double.MAX_VALUE);
         btn3.setMaxHeight(Double.MAX_VALUE);
+        btn3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón 3 clickeado");
+                // codigo para ejecutar
+            }
+        });
         
         root.setLeft(btn4);
         btn4.setMaxWidth(Double.MAX_VALUE);
         btn4.setMaxHeight(Double.MAX_VALUE);
         BorderPane.setMargin(btn1, new Insets(5,0,5,0));
+        btn4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón 4 clickeado");
+                // codigo para ejecutar
+            }
+        });
         
         root.setRight(btn5);
         btn5.setMaxWidth(Double.MAX_VALUE);
         btn5.setMaxHeight(Double.MAX_VALUE);
         BorderPane.setMargin(btn1, new Insets(5,0,5,0));
+        btn5.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Botón 6 clickeado");
+                // codigo para ejecutar
+            }
+        });
         
         
        
